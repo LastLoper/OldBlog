@@ -5,4 +5,4 @@ categories: [ios, guide]
 tags: [ios, guide]     # TAG names should always be lowercase
 ---
 
-# 스토리보드에서 테이블뷰 만들기
+# 테이블뷰 만들기
