@@ -23,7 +23,7 @@ timezone:
 
 title: 로퍼즈와 비밀의 방                          # the main title
 
-tagline: 상상을 현실로 만드는 개발자들의 비밀의 방   # it will display as the sub-title
+tagline: 상상을 현실로 만드는<br>로퍼즈의 비밀의 방   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
@@ -83,7 +83,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/images/loperz_logo.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
