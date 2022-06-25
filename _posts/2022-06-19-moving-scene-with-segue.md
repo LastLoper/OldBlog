@@ -6,7 +6,7 @@ tags: [ios, guide]     # TAG names should always be lowercase
 author: Walter
 ---
 
-iOS앱은 화면과 화면을, 컨트롤러와 컨트롤러를 전환하는 방법이 꽤 쉽다. XCode IDE가 병맛인 것만 빼면 최대 몇 십초이내에 화면을 전환할 수 있다.<br>
+iOS앱은 화면과 화면을, 컨트롤러와 컨트롤러를 전환하는 방법이 꽤 쉽다. XCode IDE가 병맛인 것만 빼면 아주 간단하게 화면을 전환할 수 있다.<br>
 이 페이지는 가장 기본적인 Segue를 이용한 화면전환 방법이다.
 
 ## 스토리보드에서는 이렇게
@@ -20,7 +20,7 @@ _ViewController를 2개 배치_
 첫 번째 방법은, `Button과 같은 View`와 `ViewController를 연결`하는 것이다. `마우스 오른쪽 버튼을 클릭`해서 메뉴를 호출, 드래그해서 연결한다.
 
 ![right click](/post_img/0619/way1_right_click.png){: }
--마우스 오른쪽 버튼을 눌러 연결-
+_마우스 오른쪽 버튼을 눌러 연결_
 
 혹은 
 
@@ -64,8 +64,8 @@ _ViewController와 ViewController끼리 연결된 모습_
 ![create class](/post_img/0619/create_class.png){: }
 _각각 클래스를 만들어 연결_
 
-### segue identifier정의
-이렇게 연결된 상태에서 각각의 Segue에 Identifier를 준다.
+### Segue Identifier정의
+이렇게 연결된 상태에서 각각의 Segue Identifier를 준다.
 
 ![segue identifier](/post_img/0619/segue_identifier.png){: }
 _Segue Identifier 정의_
