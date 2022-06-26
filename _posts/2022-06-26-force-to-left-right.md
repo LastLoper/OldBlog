@@ -1,6 +1,6 @@
 ---
 author: Walter
-title: 버튼 이미지 위치 바꾸기
+title: iOS 버튼 이미지 위치 바꾸기
 date: 2022-06-26 22:55:00 +0900
 categories: [ios, guide]
 tags: [ios, guide]     # TAG names should always be lowercase
@@ -16,4 +16,4 @@ _버튼 이미지 기본 위치_
 ![button inspectors](/post_img/0626/image_position_inspector.png){: width="300" }
 _이미지 위치를 조절할 수 있는 Semantic_
 
-`Inspectors - View - Semantic` 에서 타이틀과 이미지의 위치를 지정할 수 있다.
+`Inspectors - View - Semantic` 에서 타이틀과 이미지의 위치를 왼쪽 또는 오른쪽으로 지정할 수 있다.
