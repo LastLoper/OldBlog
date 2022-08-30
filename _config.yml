@@ -23,7 +23,7 @@ timezone:
 
 title: 로퍼즈와 비밀의 방                          # the main title
 
-tagline: 상상을 현실로 만드는,<br>로퍼즈와 비밀의 방   # it will display as the sub-title
+tagline: 상상을 현실로 만드는,<br>로퍼즈와 비밀의 방<br>공식 블로그   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.

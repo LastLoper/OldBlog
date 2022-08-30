@@ -17,7 +17,7 @@ image:
 사용법 또한 간단하다.
 
 ## 도식화
-![diagram](/post_img/0624/swift_if_2.png){: width="972" height="972" style="max-width: 95%" .shadow }
+![diagram](/post_img/20220624/swift_if_2.png){: width="972" height="972" style="max-width: 95%" .shadow }
 _if문 도식화_
 
 ## 사용법
