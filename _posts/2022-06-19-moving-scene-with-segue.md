@@ -3,7 +3,7 @@ title: Segue로 화면 전환 하는 방법
 date: 2022-06-19 17:00:00 +0900
 categories: [ios, guide]
 tags: [ios, guide]     # TAG names should always be lowercase
-author: Walter
+author: WalterCho
 ---
 
 iOS앱은 화면과 화면을, 컨트롤러와 컨트롤러를 전환하는 방법이 꽤 쉽다. XCode IDE가 병맛인 것만 빼면 아주 간단하게 화면을 전환할 수 있다.<br>

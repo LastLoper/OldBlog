@@ -3,7 +3,7 @@ title: iOS앱 리스트 만드는 방법, TableView
 date: 2022-06-18 14:46:00 +0900
 categories: [ios, guide]
 tags: [ios, guide]     # TAG names should always be lowercase
-author: Walter
+author: WalterCho
 ---
 
 다량의 데이터를 직관적이고 간단하게 보여주는 방법이 바로 리스트다. iOS앱에서는 이 리스트를 테이블 뷰라는 이름으로 지원한다. 기본적으로 모든 리스트의 아이템인 셀(Cell)은 Xcode에서 4가지 타입을 기본으로 제공하며, 커스터마이징한 셀로도 만들 수 있다.

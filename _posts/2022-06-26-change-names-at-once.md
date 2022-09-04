@@ -4,6 +4,7 @@ title: Class, IBOutlet명까지 변수명 한번에 바꾸는 방법 in Xcode
 date: 2022-06-26 22:07:00 +0900
 categories: [ios, xcode]
 tags: [ios, xcode, tips, swift]     # TAG names should always be lowercase
+author: WalterCho
 ---
 
 XCode의 `찾기-바꾸기`의 기능은 해당 페이지의 모든 동일한 이름을 바꾸지만, 이는 방법은 변수명 뿐만 아니라 클래스명과 IBOutlet명까지 한번에 바꾸는 방법이다.

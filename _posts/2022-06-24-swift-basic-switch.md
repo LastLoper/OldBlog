@@ -4,6 +4,7 @@ title: Swift 기본 문법, Switch()
 date: 2022-06-24 19:22:00 +0900
 categories: [swift, basic]
 tags: [swift, basic]     # TAG names should always be lowercase
+author: WalterCho
 ---
 
 ## 개요

@@ -4,6 +4,7 @@ title: iOS 버튼 이미지 위치 바꾸기
 date: 2022-06-26 22:55:00 +0900
 categories: [ios, guide]
 tags: [ios, guide]     # TAG names should always be lowercase
+author: WalterCho
 ---
 
 버튼에 이미지를 넣었다면 이미지는 기본적으로 왼쪽에 위치하게 된다.
