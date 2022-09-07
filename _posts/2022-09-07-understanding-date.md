@@ -1,5 +1,5 @@
 ---
-title: [iOS, Swift] Date 이해하기_1(작성중)
+title: iOS, Swift Date 이해하기_1(작성중)
 date: 2022-09-07 22:15:00 +0900
 categories: [Swift, Date]
 tags: [swift]     # TAG names should always be lowercase
