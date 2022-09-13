@@ -20,6 +20,7 @@ author: WalterCho
 
 고로 난 아래와 같이 두 번째 방법으로 많이 만드는 편이다. 물론, 필요에 따라 선택하면 된다.<br>
 ![ViewController안에 TableView를 배치한 이미지](/post_img/20220830/tableview_layout.png){: width="450" height="450" }
+_ViewController안에 TableView를 배치_
 
 ### 테이블 뷰의 셀
 - Xcode에서 제공하는 셀 타입 4가지
@@ -29,22 +30,27 @@ _Xcode에서 기본으로 제공하는 Cell Type_
 
 오른쪽 Attributes Inspector-Accessroy에서 지정할 수 있다.<br>
 ![Setting The Type](/post_img/20220830/accessroy_types.png){: width="300px" height="300px" }
+_테이블뷰 셀의 Accessary 타입들_
 
 - 커스텀 셀
 Xcode에서 4가지 셀 디자인을 제공하긴 하지만, 그래도 나만의 셀을 만들고 싶을 때가 있다. 이때 XIB파일을 따로 만들어 셀을 커스터마이징할 수 있다.
 
 먼저 **Also Create XIB file**을 체크해서 TableViewCell을 상속받는 클래스를 만든다. 그럼 아래와 같이 파일이 만들어지는데, 이 XIB에 보여주길 원하는 뷰를 배치하면 커스터마이징 셀이 된다.<br>
 ![Create Cell of Tableview](/post_img/20220830/create_cell_of_tableview.png){: width="500" height="500" }
+_커스터마이징 셀을 위한 XIB파일_
 
 그 전에, 이 XIB 파일에 클래스를 연결해줘야 한다. Inspector에서 같이 만든 클래스를 연결한다.<br>
 ![Connect class to the cell](/post_img/20220830/connect_cell_with_class.png){: }
+_XIB파일와 클래스파일 연결_
 
 하나 더, 이 XIB 파일을 뷰컨트롤러에서도 사용하기 위해서 XIB에 이름을 붙여줘야 한다. 역시 Inspector에서 Identifier를 작성해준다. 이 Identifier가 XIB의 이름이다.<br>이 이름은 아래 UITableViewDataSource { } 에서 사용될 것이다.<br>
 ![Set identifier of cell](/post_img/20220830/set_identifier_of_cell.png){: width="450" height="450" }
+_XIB파일에 아이디 만들어주기_
 
 ## 데이터는?
 M(Model), V(View), C(Controller) 패턴으로 테이블뷰를 구성하면 아래와 같은 파일 구조를 가진다.
 ![MVC Structure](/post_img/20220830/mvc_structure.png){: width="450" height="450"}
+_MVC패턴의 파일구조_
 
 - DataModel은 데이터가 저장되는 임의의 자료형이며,
 - DataManager는 DataModel과 ViewContorller사이에서 데이터를 가공하고 뿌려주는 역할을 한다.
@@ -113,6 +119,7 @@ class ViewController: UIViewContoller {
 
 그럼 아래와 같이 UITableViewDelegate구현에 필요한 함수들이 없다며 오류가 뜨는 것을 볼 수 있는데, 확장기능(Extension)을 사용해서 구현할 것이다.<br>
 ![Set Delegate Of TableView](/post_img/20220830/set_delegate_of_tableview.png){: width="450" height="450" }
+_프로토콜 위임시 내용을 구현안했을 때_
 
 각 델리게이트를 뷰컨트롤러에 연결했다면, 커스터마이징한 셀. 즉, XIB 파일을 테이블뷰에 등록해주는 작업이 필요하다.<br>
 ```swift
@@ -164,3 +171,4 @@ extension ViewController: UITableViewDataSource {
 
 ## 결과
 ![Final Result](/post_img/20220830/final_result.png){: width="500" height="500" }
+_완성_
