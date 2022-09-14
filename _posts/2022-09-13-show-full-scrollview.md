@@ -22,7 +22,7 @@ _스크롤뷰 셋팅_
 _Size Inspector에서 옵션 바꾸기_
 
 뷰 컨트롤러를 선택 후, Size Inspector에서 Simulated Size를 **Fixed에서 Freeform으로** 바꿔주면된다.<br>
-그럼 Storyboard에서 뷰 컨트롤러의 모양이 바뀐 것을 확인할 수 있는데, 아래쪽을 마우스로 잡아끌면 상하 또는 좌우 크기를 조절할 수 있다.
+그럼 Storyboard에서 뷰 컨트롤러의 모양이 바뀐 것을 확인할 수 있는데,<br>아래쪽을 마우스로 잡아끌면 상하 또는 좌우 크기를 조절할 수 있다.
 
 ![FullSize Scroll](/post_img/20220913/fullSize.png){: }
 _늘어난 뷰 컨트롤러_
