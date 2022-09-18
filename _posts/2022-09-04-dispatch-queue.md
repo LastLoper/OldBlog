@@ -6,8 +6,7 @@ tags: [swift]     # TAG names should always be lowercase
 author: WalterCho
 ---
 
-이번 주제는 조금 무거운 주제라 지겨울 수도 있겠다.<br>
-뭐 어쩔 수 없지...<br>
+쓰레드는 조금 무거운 주제라 지겨울 수도 있겠지만, 별 수 있을까<br>
 그래도 한 번 잘 읽고, 정리하면 스레드가 조금 더 가까워질 것이라 확신한다.
 
 ## GCD?

@@ -2,7 +2,7 @@
 author: Walter
 title: iOS 버튼 이미지 위치 바꾸기
 date: 2022-06-26 22:55:00 +0900
-categories: [ios, guide]
+categories: [iOS, Guide]
 tags: [ios, guide]     # TAG names should always be lowercase
 author: WalterCho
 ---

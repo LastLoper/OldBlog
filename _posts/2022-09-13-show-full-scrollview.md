@@ -1,7 +1,7 @@
 ---
 title: iOS 스토리보드에서 스크롤뷰 전체를 보고 싶을때
 date: 2022-09-13 19:52:00 +0900
-categories: [ios, guide]
+categories: [iOS, Guide]
 tags: [ios, guide]     # TAG names should always be lowercase
 author: WalterCho
 ---

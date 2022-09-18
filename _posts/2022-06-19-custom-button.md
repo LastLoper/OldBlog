@@ -1,7 +1,7 @@
 ---
 title: iOS앱 버튼 커스터마이징 하는 방법
 date: 2022-06-19 16:47:00 +0900
-categories: [ios, guide]
+categories: [iOS, Guide]
 tags: [ios, guide]     # TAG names should always be lowercase
 author: WalterCho
 ---

@@ -2,7 +2,7 @@
 author: WalterCho
 title: Swift 기본 문법, If()
 date: 2022-06-24 13:15:00 +0900
-categories: [swift, basic]
+categories: [Swift, Basic]
 tags: [swift, basic]     # TAG names should always be lowercase
 image:
   path: /post_img/0624/swift_if_1.png
