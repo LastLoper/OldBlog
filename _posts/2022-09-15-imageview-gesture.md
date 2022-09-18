@@ -54,6 +54,6 @@ self.label.addGestureRecognizer(gestureForLabel)
 UIView는 기본적으로 사용자와 상호작용할 수 있도록 isUserInteractiveEnabled가 true로 설정되어 있다.<br>
 하지만, ImageView와 Label은 false가 기본값이다. 따라서 true로 바꾸어 줘야 한다.
 
-![isUserInteractiveEnabled in Storyboard](/post_img/20220915/isUserInteractiveEnabled_in_storyboard.png){: width="350" .left }
-이렇게 스토리보드에서도 설정할 수 있다.<br>
+물론 아래와 같이 스토리보드에서도 설정할 수 있다.
+![isUserInteractiveEnabled in Storyboard](/post_img/20220915/isUserInteractiveEnabled_in_storyboard.png){: width="350" }
 _스토리보드에서 isUserInteractiveEnabled설정_
