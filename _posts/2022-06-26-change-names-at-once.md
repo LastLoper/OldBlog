@@ -1,5 +1,4 @@
 ---
-author: Walter
 title: Class, IBOutlet명까지 변수명 한번에 바꾸는 방법 in Xcode
 date: 2022-06-26 22:07:00 +0900
 categories: [iOS, Xcode]
