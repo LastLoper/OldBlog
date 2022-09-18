@@ -1,9 +1,0 @@
----
-title: 코드로 화면 전환 하는 방법
-date: 2022-06-19 17:19:00 +0900
-categories: [iOS, Guide]
-tags: [ios, guide]     # TAG names should always be lowercase
-author: WalterCho
----
-
-# 코드로 화면 전환하는 방법 with Navigation Controller
