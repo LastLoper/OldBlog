@@ -70,6 +70,7 @@ switch AVCaptureDevice.authorizationStatus(for: .video) {
 이후 뷰컨트롤러가 화면에 나타날때 호출되는 `viewWillAppear()`에서 setUpResult상태를 확인, 거부된 상태일 때 재요청할 수 있다!
 
 ```swift
+//viewWillAppear()
 sessionQueue.async {
     switch self.setupResult {
     case .success:
