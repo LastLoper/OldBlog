@@ -1,5 +1,5 @@
 ---
-title: 카메라 권한 설정하기
+title: iOS앱 카메라 권한 요청? 간단하게 만들기
 date: 2022-09-20 10:31:00 +0900
 categories: [iOS, Guide]
 tags: [ios, guide, camera, photo, media]
