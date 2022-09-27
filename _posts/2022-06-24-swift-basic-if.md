@@ -1,6 +1,6 @@
 ---
 author: WalterCho
-title: Swift 기본 문법, If()
+title: Swift 참과 거짓을 구분하는 If문 이해하기
 date: 2022-06-24 13:15:00 +0900
 categories: [Swift, Basic]
 tags: [swift, basic]     # TAG names should always be lowercase
