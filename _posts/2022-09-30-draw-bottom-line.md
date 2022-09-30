@@ -76,12 +76,13 @@ TextView, TextField, Label을 만들어 각각 Top, left/right, bottom을 줬다
 ```swift
 //textView의 위쪽에만 빨간색으로 테두리를 그린다.
 func drawLineAtTopOfTextView() {
-        self.textView.layer.drawLineAt(
-            edges: [.top],
-            color: UIColor.red,
-            width: 5.0
-        )
-    }
+    self.textView.layer.drawLineAt(
+        edges: [.top],
+        color: UIColor.red,
+        width: 5.0
+    )
+}
+
 //textField의 왼쪽과 오른쪽에 갈색으로 테두리를 그린다.    
 func drawLineAtLeftAndRightOfTextField() {
     self.textField.layer.drawLineAt(
