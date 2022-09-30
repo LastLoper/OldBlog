@@ -76,17 +76,28 @@ TextView, TextField, Label을 만들어 각각 Top, left/right, bottom을 줬다
 ```swift
 //textView의 위쪽에만 빨간색으로 테두리를 그린다.
 func drawLineAtTopOfTextView() {
-    self.textView.layer.drawLineAt(edges: [.top], color: UIColor.red, width: 5.0)
-}
-    
-//textField의 왼쪽과 오른쪽에 갈색으로 테두리를 그린다.
+        self.textView.layer.drawLineAt(
+            edges: [.top],
+            color: UIColor.red,
+            width: 5.0
+        )
+    }
+//textField의 왼쪽과 오른쪽에 갈색으로 테두리를 그린다.    
 func drawLineAtLeftAndRightOfTextField() {
-    self.textField.layer.drawLineAt(edges: [.left, .right], color: UIColor.brown, width: 5.0)
+    self.textField.layer.drawLineAt(
+        edges: [.left, .right],
+        color: UIColor.brown,
+        width: 5.0
+    )
 }
     
 //label의 아래쪽만 테두리 그리기
 func drawLineAtBottomOfLabel() {
-    self.label.layer.drawLineAt(edges: [.bottom], color: UIColor.black, width: 5.0)
+    self.label.layer.drawLineAt(
+        edges: [.bottom],
+        color: UIColor.black,
+        width: 5.0
+    )
 }
 ```
 
@@ -99,7 +110,10 @@ UIRectEdge는,
   
 총 다섯개의 상태값을 가지고 있다.
 
-
 ### 결과
 아래와 같이 지정된 부분에 테두리가 그려지는 것을 확인할 수 있다.
 ![part border](/post_img/20220930/part_border.png){: width="450"}
+
+
+## E-mail을 보내주세요!
+로퍼즈는 메일을 열어두고 있습니다! 궁금하신 점이 있다면 왼쪽 사이드 메뉴에서 바로 메일을 보내주세요!
