@@ -1,5 +1,5 @@
 ---
-title: iOS 특정뷰에 특정 부분 테두리 라인 그리기!
+title: iOS 뷰의 특정 부분에 테두리 그리기!
 date: 2022-09-30 21:25:00 +0900
 categories: [iOS, Guide]
 tags: [ios, guide]
