@@ -4,7 +4,7 @@ title: iOS, Swift Date 이해하기_1(작성중)
 date: 2022-10-10 00:00:00 +0900
 categories: [Swift, Date]
 tags: [swift]     # TAG names should always be lowercase
-author: Johncoder
+author: JohnCoder
 
 ---
 
@@ -15,8 +15,8 @@ Date 타입은 시간으로 이루어져 있어 정수형에 그낭 갖다 대�
 
 Date 타입형을 구워 삶을 수 있는 자료형은
 
-*** 1) DateFormatter***
-*** 2) DateComponents***
+***1) DateFormatter***
+***2) DateComponents***
 
 두가지가 있다.
 

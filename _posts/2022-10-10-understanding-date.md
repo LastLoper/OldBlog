@@ -1,167 +1,135 @@
 ---
-
 title: iOS, Swift Date 이해하기_1(작성중)
 date: 2022-10-10 00:00:00 +0900
 categories: [Swift, Date]
 tags: [swift]     # TAG names should always be lowercase
-author: Johncoder
-
+author: JohnCoder
 ---
 
-지난 시간에는 Date 타입의 시간이 어디를 기준으로 하는지, 생성자는 어떻게 구성되어 있는지 알아보았다.
-Date 타입은 시간으로 이루어져 있어 정수형에 그낭 갖다 대입해도 될거같고, 출력되는 포맷 자체가 
-문자열 처럼도 보여서 아무렇게나 쓸 수 있을것 같아 보이는데, Date도 타입이기 때문에 다른 타입으로
-변환과정을 거쳐야 잘 사용할 수 있다. 
+앱을 구현하다가 날짜 관련된 데이터를 다룰 일이 있어서
+찾아보다가 공부한 내용을 담아보고자 한다.
 
-Date 타입형을 구워 삶을 수 있는 자료형은
+물론 공식 문서만 봐도 이해가 될 만큼 잘 나와있지만, 나같이 성질 급한 사람들을 위해 쓰는 글이고,
+삽질한 경험을 토대로, 어떻게 삽질을 했는지 경험을 공유하고자 포스팅을 하게 되었다. 
 
-*** 1) DateFormatter***
-*** 2) DateComponents***
+## Date?
 
-두가지가 있다.
-
-## <DateFormatter VS DateComponents>
-### 1) DateFormatter
-
-DateFormatter의 설명을 공식문서에서 확인하면 
-***A formatter that converts between dates and their textual representations.***
-***번역하면, 날짜와 텍스트 사이를 변환하는 포매터(형식지정자) 역할***
-
-DateComponents의 설명은 
-
-A date or time specified in terms of units
-(such as year, month, day, hour, and minute) to be evaluated in a calendar
- system and time zone.
-
-날짜/시간을 단위별(연, 월, 일, 시간, 분 등)로 지정된 날짜 또는 시간이라고 하는데, 사실 무슨말인지 번역을 
-봐도 어렵다. 
-
-이 부분은 아래 적용 코드에서 이해를 돕도록 하겠다.
+Date는 날짜 및 시간을 다루는 Swift 의 데이터 형이다. (Int, Double 처럼 구조체로 된 데이터형!)
 
 ```swift
-import Foundation
-
-let curruntTime: Date = Date() 
-//GMT +0의 현재시간. 만약 지금이 한국 23시면, -9시. 즉 낮 2시가 뜨겠죠?
-var dateConvert: DateFormatter = DateFormatter()
-//DateFormatter 인스턴스 생성
-
-print(TimeZone.abbreviationDictionary)
-//TimeZone.abbreviationDictionary 메서드를 출력하면 각 타임존별 축악여를 전부 확인할 수 있다.
-//한국은 "KST" 인 것 확인 가능!
-
-dateConvert.timeZone = TimeZone(abbreviation: "KST")
-//한국 시간 적용. abbrevitation에는 각 날짜 타임존의 축약어가 들어간다.
-//위에서 설명함!
-
-dateConvert.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//dateFormatter 타입의 프로퍼티인 dateFormat을 정해준다.
-//dateFormate은 날짜를 어떤 방식으로 보여줄 것인지 문자열로 포맷을 정한다.
-//포맷 방식은 아래 표로 정리해놓았다.
-
-let dateString = dateConvert.string(from: curruntTime)
-//dateConvert에 세팅한 포맷으로 from 인자로 들어간 날짜를 문자열로 반환하는 메서드이다.
-
-print(curruntTime)
-//2022-10-04 14:53:20 +0000 -> Date타입
-
-print(dateConvert.string(from: curruntTime))
-//2022-10-04 23:53:20 -> String타입!
+struct Date
 ```
 
-물론, Date <-> DateFormatter 를 오갈 수 있도록 메서드도 있으니 공식문서 참고!
+Apple Developer 문서에 따르면
 
-func date(from string: String) -> Date? : 포맷팅되어 표현된 날짜의 문자열을 Date로 반환! 
-func string(from date: Date) -> String : 날짜를 포맷팅된 문자열로 반환!
+***A Specific Point in time, independent of any calendar or time zone***
+***즉, 날짜나 어떤 위치(즉, 한국인지 미국인지 어디인지)와 전혀 무관한 시간의 특정 지점***
 
+이 말이 너무 이해가 안갔다. 아니 난 한국에있는데 왜 Date타입으로 날짜를 확인하면 자꾸 전날이 뜨거나
+시간이 -9시간 되서 뜨는거야? 이 정도는 코드나 운영체제에서 알아서 위치를 확인해서 해주지않나..?
+아니 그럼 시차는 Date 인스턴스에서 어떻게 적용하는 걸까...? 
+혼자 엄청나게 고민을 했다.
 
- ++ 그리고, DateFormatter에 Locale(identifier: String) 이라는 메서드가 있는데, 여기 들어가는
- identifier 인자에 지역 이름 비슷한게 들어가게 되어있다. 여기에 한국 기준으로 “ko_KR” 이라는 축약어가
- identifier 인자 로 들어가는데, 저 인자를 넣으면 뭔가 시차가 적용될 것 같은 느낌이 팍팍 드는데, 
- 이는 잘못되었다.
- (실제로 나도 그랬고 여러 커뮤니티에 Locale 지정했는데 왜 시차적용이 안되요? 하는 글들을 많이 보았다.)
- 여기에 들어가는 지역별 identifier에 따라 .dateFormat으로 표시했을 때, 각 나라별 방식으로 날짜들이 
- 표현되게 된다. 따라서 Locale은 시차와는 전~~~혀 관련이 없다!
+저 설명을 쉽게 표현하자면
 
- ex) 한국: 12월, 미국: Dec…
- (identifier 축약어는 구글에 Locale identifier list라고 검색하면 잘 정해놓은 글들이 많다.)
+***Date형은 UTC +0기준. 즉 아무런 시차도 적용되지 않은 시간 기준이다!!!***
 
-++코드 설명 추가
+어떤 Date 인스턴스가 가지는 날짜/시간은 UTC +0 기준이기 때문에 시차는 아예 적용되어 있지 않다.
+(검색해보니 UTC와 GMT 는 거의 비슷하게 통용된다고 한다.(GMT는 그리니치 천문대 표준시))
 
-### 1) DateComponents
+## Date의 요소
 
-DateComponents는 공식 문서에 의하면
-*** A date or time specified in terms of units
-    (such as year, month, day, hour, and minute)
-    to be evaluated in a calendar system and time zone.
+Date가 가지는 주요 요소를 보면
 
-즉, 특정한 날짜/시간의 단위와 관련이 있어 보인다. DateFormatter와 다르게 DateComponents
-는 생성자만 봐도 뭔가 복잡하게는 되어있는데, 그래도 인자 네임태그가 잘 표현되어 있다.
+1) 연도
+2) 월
+3) 일
+4) 시간
+5) 분
+6) 초
+7) 밀리초
+8) 요일
+
+정도가 가장 많이 쓰일 것 같다.
+
+(물론 다른 요소들도 많은거 같다... 주차, 분기, 등..)
+기본적으로 날짜/시간 관련되서는 전부 가지고 있다.
+
+## Date 생성자!
+
+위에서 설명했듯이, Date 객체 자체는 UTC 기준의 시간만을 가지는 것만 알면 헷갈리지 않고
+사용할 수 있을것이다.
+
+Date 타입도 구조체기 때문에 생성자를 갖는다. Date는 어떤 생성자를 가지고 어떻게 속성들을 가지게 
+되는지 알아보자.
+
+### 1) init()
+그냥 Date()로 생성시키면 생성되는 현재 시각이 표시된다.
+(뒤에 +0000에서 UTC 기준 시간임을 알 수 있다.)
 
 ```swift
-init(
-    calendar: Calendar? = nil,
-    timeZone: TimeZone? = nil,
-    era: Int? = nil,
-    year: Int? = nil,
-    month: Int? = nil,
-    day: Int? = nil,
-    hour: Int? = nil,
-    minute: Int? = nil,
-    second: Int? = nil,
-    nanosecond: Int? = nil,
-    weekday: Int? = nil,
-    weekdayOrdinal: Int? = nil,
-    quarter: Int? = nil,
-    weekOfMonth: Int? = nil,
-    weekOfYear: Int? = nil,
-    yearForWeekOfYear: Int? = nil
-)
+let currentDate: Date = Date()
+//2022-09-19 12:47:30 +0000 
 ```
-위에서 특정한 날짜/시간의 단위와 관련있다고 했는데, 위 코드를 보면 연, 월, 일, 시간, 분, 초 등
-날짜와 관련된 요소들이 생성자의 인자로 들어가있는데 특이하게도 전부 옵셔널 변수로 들어가 있다.
-이 말인 즉슨, 모든 인자들이 필수로 들어갈 필요가 없고 원하는 인자만 넣어서 활용할 수 있게
-되어있는 것 같다. 아래 코드를 보면 이해가 갈 것 이다!
+
+### 2) init(timeIntervalSinceNow: TimeInterval)
+
+TimeInterval 파라메터의 타입은 정수형(Int)인데, 현재 시간에서 TimeInterval 초 만큼 지난 시간이 
+세팅된다. 아래 코드를 보면 현재 시간은 12:50:00인데, 30을 부여하면 12:50:30으로 표시된다.
 
 ```swift
-//오늘날짜로부터 35일 되는날을 구하는 코드
-import Foundation
+let currentDate: Date = Date()
+print(currentDate)
+//2022-09-19 12:50:00 +0000
 
-let currentDate = Date() //현재 날짜
-var calendar = Calendar.current //dateComponents를 활용하기 위한 Calendar 변수
-calendar.timeZone = TimeZone(abbreviation: "UTC")!
-
-//Date를 문자열로 처리하기 위한 DateFormatter 변수 선언
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-
-let day = DateComponents(day: 35)
-//day: 35일 이라는 요소를 갖도록 인스턴스화. day 변수에는 다른 요소들은 nil이고, 일만 가지고 있다.
-
-if let d100 = calendar.date(byAdding: day, to: currentDate)
-{
-    print(currentDate) // 
-    print(dateFormatter.string(from: d100))
-
-}
-//2022-10-10 12:07:35 +0000 -> 현재 시각
-//2022-11-14 12:07:35 -> 35일 지난 날짜
-
-//calendar.date(byAdding: DateComponents, to: Date) 함수를 사용해서
-//byAdding에 day변수(35일)를, to: 에 현재 날짜를 넣으면
-//현재 날짜에서 35일 지난 날짜를 d100 변수에 반환시켜 준다.(옵셔널이라 if let 처리!)
-
+let date2: Date = Date(timeIntervalSinceNow: 30)
+print(date2)
+//2022-09-19 12:50:30 +0000
 ```
 
-### 마치며
-내가 느끼는 두 자료형의 용도는 
+### 3) init(timeInterval: TimeInterval, since: Date)
 
-***DateFormatter : Date 를 문자열로 쓰기위한, 혹은 그 반대를 위한 기능을 담당하고,***
-***DateComponents : 날짜 데이터 요소(년, 월, 일, 시간 등..)간 계산을 위한 성격이 강하다.***
+since 파라메터에 Date 요소가 들어가게 되어있다. 즉, 파라메터로 들어간 Date 시간으로 부터 TimeInterval 에 세팅된 초 만큼 지난 시간을 객체에 가진다. 
+아래 코드를 보면 현재시간 + 30초된 시간이 date2 변수에 저장되어 12:56:15가 세팅되었고,
+date3에 since에 세팅된 date2 기준에서 43초 흐른 시간이 세팅되어 있다.
 
-DateComponents 자료형에는 별도로 Date나 String으로 반환하는 함수가 없으니
-반드시 Date나 Calendar에 계산되어 쓴 다음에 DateFormatter로 활용하는 것이 좋다.
+```swift
+let date2: Date = Date(timeIntervalSinceNow: 30)
+print(date2)
+//2022-09-19 12:56:15 +0000
+
+let date3: Date = Date(timeInterval: 43, since: date2)
+print(date3)
+//2022-09-19 12:56:58 +0000
+```
+
+### 4) init(timeIntervalSinceReferenceDate: TimeInterval)
+
+2001년 1월 1일 0시부터 TimeInterval 초 만큼 흐른 시간이 세팅된다.
+
+```swift
+let date4: Date = Date(timeIntervalSinceReferenceDate: 45)
+print(date4)
+//2001-01-01 00:00:45 +0000
+```
+
+### 5) init(timeIntervalSince1970: TimeInterval)
+
+1970년 1월 1일 0시부터 TimeInterval 초 만큼 흐른 시간이 세팅된다.
+아래 코드에서는 1970년 1월 1일 0시0분0초부터 5초가 흐른 시간이 세팅되었다.
+
+```swift
+let date5: Date = Date(timeIntervalSince1970: 5)
+print(date5)
+//1970-01-01 00:00:05 +0000
+```
+
+Date 타입의 생성자에 따라서 어떻게 날짜/시간 속성을 가지는지 알아보았다. 
+Date타입도 구조체기 때문에 Date 인스턴스 간 비교 연산도 가능하다.
+
+깨알팁) 레퍼런스 문서에 func == (lhs: Date, rhs:Date), func > (lhs: Date, rhs:Date) 로 표시되어 있는
+메서드들은 인스턴스간 비교연산자로 Bool연산이 가능하다는 뜻이다.
+(물론 +, - 같은 계산도!) 
 
 
-
+다음 포스팅에서는 이 Date 타입을 어떻게 구워삶는지 알아보자.
