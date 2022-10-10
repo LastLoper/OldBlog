@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://loperz.com/sitemap.xml
