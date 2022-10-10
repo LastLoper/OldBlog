@@ -7,7 +7,7 @@ author: JohnCoder
 ---
 
 iOS, Swift Date 이해하기 1편
-<>
+<http://loperz.com/posts/understanding-date/>
 
 지난 시간에는 Date 타입의 시간이 어디를 기준으로 하는지, 생성자는 어떻게 구성되어 있는지 알아보았다.
 Date 타입은 시간으로 이루어져 있어 정수형에 그낭 갖다 대입해도 될거같고, 출력되는 포맷 자체가 
