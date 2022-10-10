@@ -1,10 +1,11 @@
 ---
 title: iOS, Swift Date 이해하기 2편
-date: 2022-10-10 13:13:00 +0900
-categories: [Swift, Date]
-tags: [swift]     # TAG names should always be lowercase
+date: 2022-10-10 22:30:00 +0900
+categories: [Swift, DeepDive]
+tags: [swift, date]
 author: JohnCoder
 ---
+
 iOS, Swift Date 이해하기 1편
 <>
 
