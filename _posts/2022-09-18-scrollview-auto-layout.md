@@ -2,7 +2,7 @@
 title: iOS 스크롤뷰 오토레이아웃 한방에 잡는 간단한 방법
 date: 2022-09-18 18:19:00 +0900
 categories: [iOS, Guide]
-tags: [ios, guide]     # TAG names should always be lowercase
+tags: [ios, g uide]     # TAG names should always be lowercase
 author: WalterCho
 ---
 
