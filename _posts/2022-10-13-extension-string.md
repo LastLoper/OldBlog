@@ -1,5 +1,5 @@
 ---
-title: 문자열에서 인덱스를 정수로, 문자 추출하기!
+title: iOS, Swift 문자열에서 인덱스를 정수로, 문자 추출하기!
 date: 2022-10-13 09:25:00 +0900
 categories: [Swift, Util]
 tags: [swift, util]
