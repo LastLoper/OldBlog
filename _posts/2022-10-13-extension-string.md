@@ -6,15 +6,6 @@ tags: [swift, util]
 author: WalterCho
 ---
 
-<!-- C, 자바, 코틀린등 다른 프로그래밍 언어에서는 문자열에서 인덱스를 정수로 주고 문자를 추출할 수 있다.<br>
-
-```kotlin
-var str: String = "Loperz"
-println(str[0])
-//L
-```
--->
-
 String을 확장(Extension)해서 C, 자바, 코틀린등과 같이 사용할 수 있다.
 
 ```swift
