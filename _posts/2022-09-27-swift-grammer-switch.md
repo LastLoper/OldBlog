@@ -1,8 +1,8 @@
 ---
 title: Swift 값의 일치 여부를 판단하는 Switch문 이해하기
 date: 2022-09-27 21:47:00 +0900
-categories: [Swift, Basic]
-tags: [swift, Baisc, 조건문]
+categories: [Swift, Grammer]
+tags: [swift, grammer, 조건문]
 author: WalterCho
 ---
 
