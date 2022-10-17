@@ -1,7 +1,7 @@
 ---
 title: iOS, Swift Down Casting 이해하기 
 date: 2022-10-17 23:00:00 +0900
-categories: [Swift, Class, DownCasting, OOP]
+categories: [Swift, Grammer]
 tags: [swift]
 author: JohnCoder
 ---
