@@ -1,12 +1,12 @@
 ---
 title: iOS, Swift Down Casting 이해하기 
 date: 2022-10-17 23:00:00 +0900
-categories: [Swift, Class, DownCasting, OOP]
+categories: [Swift, Grammer]
 tags: [swift]
 author: JohnCoder
 ---
 
-# 다운캐스팅!
+## 다운캐스팅!
 
 객체지향 언어를 공부하면서 가장 헷갈렸던 개념이 아니였던가 싶다. 상속까지는 어찌저찌 이해를 했는데
 상속이 되면 부모/자식 클래스 인스턴스에서 어떤 특성이 생기는지 이해하는데 참 많은 시간이 걸렸다.
@@ -17,7 +17,7 @@ author: JohnCoder
 다운캐스팅을 설명하기 위해서는 클래스간 상속이 전제가 되어야 한다. 상속된 클래스는 유용한 특성이
 너무나도 많기 때문에 본 포스팅에선 상속에 대해 어느 정도 안다고 생각하고 시작하겠다.
 
-## 코드 예시 정의!
+### 코드 예시 정의!
 모든 클래스/상속에 대한 포스팅이 그렇듯이, 적절한 예시로 시작을 하고자 한다.
 한국과 미국에 스마트폰을 팔아먹는 제조업자 컨셉으로 설명을 시작하겠다.
 
@@ -34,6 +34,7 @@ author: JohnCoder
 ```swift
 
 //공통 기능 클래스 정의
+
 class CommonFunction { 
     
     var language: String = "" //디바이스 언어
@@ -70,7 +71,7 @@ class ToUSA: CommonFunction { //공통기능 상속 & 미국 폰 기능 정의
 자, 이제 기능이 대한 정의를 클래스로 표현하였고, 이를 어떻게 다운캐스팅에 접목해서 사용할 수 있는지
 살펴보자.
 
-## 휴대폰 품질검사 한번 해봅시다!
+### 휴대폰 품질검사 한번 해봅시다!
 
 자 여기서, 프로세스를 하나 추가하자. 
 
@@ -146,7 +147,8 @@ temp = sample as? ToKorea 라고 코드가 들어가있는데, 이는
 
 (그럼 암시적으로 temp변수의 타입은 ToKorea 로 지정이 되겠지?)
 
-***temp: ToKorea = sample as? ToKorea ***
+***temp: ToKorea? = sample as? ToKorea*** <br>
+
 
 로 풀어서 쓸 수 있으며, 이 다운캐스팅이 성공한 이유는, 배열에 들어간 요소의 타입은 CommonFunction
 (부모클래스) 이지만, 실제로 갖고있는 인스턴스는 ToKorea, ToUSA(자식 클래스) 이기 때문이다.
