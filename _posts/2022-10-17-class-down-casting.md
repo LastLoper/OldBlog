@@ -34,6 +34,7 @@ author: JohnCoder
 ```swift
 
 //공통 기능 클래스 정의
+
 class CommonFunction { 
     
     var language: String = "" //디바이스 언어
@@ -146,7 +147,8 @@ temp = sample as? ToKorea 라고 코드가 들어가있는데, 이는
 
 (그럼 암시적으로 temp변수의 타입은 ToKorea 로 지정이 되겠지?)
 
-***temp: ToKorea = sample as? ToKorea ***
+***temp: ToKorea? = sample as? ToKorea*** <br>
+
 
 로 풀어서 쓸 수 있으며, 이 다운캐스팅이 성공한 이유는, 배열에 들어간 요소의 타입은 CommonFunction
 (부모클래스) 이지만, 실제로 갖고있는 인스턴스는 ToKorea, ToUSA(자식 클래스) 이기 때문이다.
