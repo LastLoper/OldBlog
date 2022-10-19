@@ -1,5 +1,5 @@
 ---
-title: Swift WebView로 URL보내기전 HTTP체크
+title: Swift, URL에 http:// 자동으로 채워넣는 방법
 date: 2022-10-18 10:23:00 +0900
 categories: [Swift, Util]
 tags: [swift, ios, util, http, web]
