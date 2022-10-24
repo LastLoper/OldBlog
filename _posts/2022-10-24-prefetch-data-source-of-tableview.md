@@ -9,12 +9,7 @@ author: WalterCho
 보통 많은 데이터를 보여주는 방법으로 테이블뷰 또는 컬렉션뷰를 이용하곤 한다.<br>
 이번 포스팅에서는 네트워크 통신시 많은 데이터를 보여줄때, 페이지 단위로 보여주고 특정 시점에 다음 페이지에 해당하는 데이터를 재요청하는 방법을 정리했다.
 
-테이블 뷰는 **UITableViewDataSourcePrefetching** 프로토콜을 채택하고,<br>
-컬렉션 뷰는 **UICollectionViewDataSourcePrefetching** 프로토콜을 채택한다.
-
 ## prefetchDataSource 프로토콜
-테이블 뷰 또는 컬렉션 뷰 모두 사용법은 동일하므로 테이블 뷰에서의 사용법만 정리했다.<br>
-
 애플 도큐먼트에서 말하는 prefetchDataSource의 설명을 보면,<br>
 ***The object that acts as the prefetching data source for the table view,***<br>
 ***receiving notifications of upcoming cell data requirements.***<br>
@@ -28,7 +23,12 @@ author: WalterCho
 이제 테이블 뷰를 통한 예시를 보면 조금 더 이해할 수 있을 것이다.
 
 ## Usage
-사용법은 약간의 연산이 필요하지만 간단한 편이다.<br>
+테이블 뷰 또는 컬렉션 뷰 모두 사용법은 동일하다.<br>
+차이점이 있다면,<br>
+
+테이블 뷰는 **UITableViewDataSourcePrefetching** 프로토콜을 채택하고,<br>
+컬렉션 뷰는 **UICollectionViewDataSourcePrefetching** 프로토콜을 채택한다.
+
 먼저 viewDidLoad()에서 프로토콜을 채택한다.
 
 ```swift
