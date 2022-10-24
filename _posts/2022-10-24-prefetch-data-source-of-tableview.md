@@ -11,11 +11,12 @@ author: WalterCho
 
 ## prefetchDataSource 프로토콜
 애플 도큐먼트에서 말하는 prefetchDataSource의 설명을 보면,<br>
+
 ***The object that acts as the prefetching data source for the table view,***<br>
 ***receiving notifications of upcoming cell data requirements.***<br>
 ***사전 데이터 원본 역할을 하는 개체로, 다가올 셀 데이터 요구 사항에 대한 알림을 받습니다.***
 
-무슨 말인지 한번에 와닿지 않는다..
+무슨 말인지 썩 한번에 와닿지 않는다..
 
 간단하게 말해서 ***앞으로 불러올 Cell의 index값을 받는***것으로 생각하면 간단하다.<br>
 무슨 말이냐면, 현재 6번째 cell을 보여주고 있을 때 아래 메서드의 indexPaths값을 print구문으로 찍어보면 12, 13, 14.. 등의 인덱스값을 가지는 것을 확인할 수 있다.
@@ -49,7 +50,7 @@ extension VC: UITableViewDataSourcePrefetching {
 }
 ```
 
-TO DO부분에는 앞으로 불러올 인덱스 값(IndexPaths)이 페이지 번호와 일치하는 지를 확인 후, 일치한다면 해당 페이지 번호를 파라미터로 재요청 하면 된다.
+TO DO부분에는 앞으로 불러올 인덱스 값(IndexPaths)이 불러올 다음 페이지 번호와 일치하는 지를 확인 후, 일치한다면 해당 페이지 번호를 파라미터로 재요청 하면 된다.
 
 ```swift
 var currPage = 1    //데이터를 성공적으로 가져왔을 때 페이지가 증가한다.
