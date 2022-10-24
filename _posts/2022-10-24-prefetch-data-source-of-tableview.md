@@ -53,13 +53,14 @@ extension VC: UITableViewDataSourcePrefetching {
 TO DO부분에는 앞으로 불러올 인덱스 값(IndexPaths)이 불러올 다음 페이지 번호와 일치하는 지를 확인 후, 일치한다면 해당 페이지 번호를 파라미터로 재요청 하면 된다.
 
 ```swift
-var currPage = 1    //데이터를 성공적으로 가져왔을 때 페이지가 증가한다.
+class VC: UITableViewController {
+    var currPage = 1    //데이터를 성공적으로 가져왔을 때 페이지가 증가한다.
 
-override func viewDidLoad() {
-    ...
-    tableView.prefetchDataSource = self
+    override func viewDidLoad() {
+        ...
+        tableView.prefetchDataSource = self
+    }
 }
-
 extension VC: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) { 
         //첫번째 페이지라면 다시 데이터를 요청할 필요가 없기 때문에
