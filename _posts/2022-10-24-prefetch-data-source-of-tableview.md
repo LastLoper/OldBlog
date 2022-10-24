@@ -16,7 +16,8 @@ author: WalterCho
 테이블 뷰 또는 컬렉션 뷰 모두 사용법은 동일하므로 테이블 뷰에서의 사용법만 정리했다.<br>
 
 애플 도큐먼트에서 말하는 prefetchDataSource의 설명을 보면,<br>
-***The object that acts as the prefetching data source for the table view, receiving notifications of upcoming cell data requirements.***
+***The object that acts as the prefetching data source for the table view,***<br>
+***receiving notifications of upcoming cell data requirements.***<br>
 ***사전 데이터 원본 역할을 하는 개체로, 다가올 셀 데이터 요구 사항에 대한 알림을 받습니다.***
 
 무슨 말인지 한번에 와닿지 않는다..
@@ -74,3 +75,7 @@ extension VC: UITableViewDataSourcePrefetching {
 ```
 
 단, 이 방법을 사용하기 위해서는 API에서 page번호에 대한 파라미터를 제공해야 한다.
+
+## 메일보내기
+포스팅에 잘못된 부분이 있거나 궁금하신 점이 있다면, 왼쪽 사이드 하단 메뉴에서 로퍼즈팀으로 메일을 보내주세요!
+회신 후, 최대한 빠른 시간 내에 회신드릴게요! 감사합니다.
