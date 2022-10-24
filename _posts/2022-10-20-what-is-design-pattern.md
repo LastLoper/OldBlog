@@ -46,6 +46,7 @@ _발퀄이지만.. 자동차 설계도입니다._
 iOS앱에서 TableView구현을 예로 보자
 
 ### MVC 디자인 패턴 적용하기 전
+TableVC.swift
 ```swift
 class TableVC: UITableViewController {
     //과일 데이터
@@ -60,7 +61,11 @@ class TableVC: UITableViewController {
     }
 }
 
+//TableViewDataSource
 extension TableVC {
+    .
+    .
+    .
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FruitListCell") as! FruitListCell
         
@@ -73,12 +78,11 @@ extension TableVC {
 ```
 
 위 코드를 보면 데이터 또는 cell의 변경사항이 발생했을 경우, Controller의 코드를 수정해야 한다.<br>
-반면 적용 후 예시를 보면 각가의 부분만 수정해주면 되는 것을 알 수 있다.
+반면 적용 후 예시에서는 각각의 부분만 수정해주면 되는 것을 알 수 있다.
 
 ### MVC 디자인 패턴 적용 후
-
+Fruit.swift(Model)
 ```swift
-//Fruit.swift(Model)
 struct FruitModel {
     //데이터 변경 요청시 이 파일만 수정하면 된다.
     private var fruits = ["Apple", "Banana", "Grape", "Mango", "Strawberry", "blueberry"]
@@ -89,8 +93,8 @@ struct FruitModel {
 }
 ```
 
+TableViewItem.swift(View)
 ```swift
-//TableViewItem.swift(View)
 struct TableViewItem: UITableViewCell {
     @IBOutlet weak var fruitName: UILabel
 
@@ -100,11 +104,10 @@ struct TableViewItem: UITableViewCell {
 }
 ```
 
+TableVC.swift(Controller)
 ```swift
-//TableVC.swift(Controller)
 class TableVC: UITableViewController {
 
-    //Modle객체를 만들어 줌으로써
     let fruitModel = FruitModel()
 
     override func viewDidLoad() {
@@ -116,7 +119,11 @@ class TableVC: UITableViewController {
     }
 }
 
+//TableViewDataSource
 extension TableVC {
+    .
+    .
+    .
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FruitListCell") as! FruitListCell
         
@@ -127,4 +134,3 @@ extension TableVC {
     }
 }
 ```
-
