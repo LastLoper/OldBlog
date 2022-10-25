@@ -57,3 +57,7 @@ UIView는 기본적으로 사용자와 상호작용할 수 있도록 isUserInter
 
 ![isUserInteractiveEnabled in Storyboard](/post_img/20220915/isUserInteractiveEnabled_in_storyboard.png){: width="350" }
 _스토리보드에서 isUserInteractiveEnabled설정_
+
+## 메일보내기
+포스팅에 잘못된 부분이 있거나 궁금하신 점이 있다면, 왼쪽 사이드 하단 메뉴에서 로퍼즈팀으로 메일을 보내주세요!<br>
+회신 후, 최대한 빠른 시간 내에 회신드릴게요! 감사합니다.
