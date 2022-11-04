@@ -88,7 +88,7 @@ class ViewController1: UIViewController {
     }
 }
 ```
-![EX1](/post_img/20221026/EX1.gif)
+![EX1](/post_img/20221026/ex1.gif)
 
 ## EX2 - 뷰 방향 인식!
 이번에는 드래그 하는 방향을 인식하도록 만들어 보았다. 위 예제처럼 똑같이 동작하는 뷰를 만들고, 드래그 방향을 라벨에 띄우도록 만들어 보자.
@@ -159,7 +159,7 @@ class ViewController2: UIViewController {
     }
 }
 ```
-![EX1](/post_img/20221026/EX2.gif)
+![EX1](/post_img/20221026/ex2.gif)
 
 이렇게 하면 뷰가 이동하는 방향을 상/하/좌/우로 나누어서 라벨에 표시가 된다. <br>
 (콜백함수는 뷰를 드래그하여 이동시킬 때 마다 실행되기 때문에 라벨에 표시도 계속해서 업데이트 시킨다!)
