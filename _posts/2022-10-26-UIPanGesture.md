@@ -159,7 +159,7 @@ class ViewController2: UIViewController {
     }
 }
 ```
-![EX2](/post_img/20221026/EX2.gif)
+![EX1](/post_img/20221026/EX2.gif)
 
 이렇게 하면 뷰가 이동하는 방향을 상/하/좌/우로 나누어서 라벨에 표시가 된다. <br>
 (콜백함수는 뷰를 드래그하여 이동시킬 때 마다 실행되기 때문에 라벨에 표시도 계속해서 업데이트 시킨다!)
