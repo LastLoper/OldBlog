@@ -77,3 +77,8 @@ Swipe는 드래그 동작 후 손가락이 들어 올려졌을 때 인식되며,
 그럼 다음 블로그에서는 다른 제스쳐도 한번 알아보자!
 
 **출처:<https://stackoverflow.com/questions/9898627/what-is-the-difference-between-pan-and-swipe-in-ios>**
+
+
+## 메일보내기
+포스팅에 잘못된 부분이 있거나 궁금하신 점이 있다면, 왼쪽 사이드 하단 메뉴에서 로퍼즈팀으로 메일을 보내주세요!<br>
+최대한 빠른 시간 내에 회신드릴게요! 감사합니다.

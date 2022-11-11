@@ -146,7 +146,7 @@ class ViewController2: UIViewController {
                 labelDir.text = "상"
             }
         }
-        
+        b
         if (location.x < controlDirView.frame.width/2) {
             draggedView.center.x = controlDirView.frame.width/2
 
@@ -169,4 +169,4 @@ class ViewController2: UIViewController {
 
 ## 메일보내기
 포스팅에 잘못된 부분이 있거나 궁금하신 점이 있다면, 왼쪽 사이드 하단 메뉴에서 로퍼즈팀으로 메일을 보내주세요!<br>
-회신 후, 최대한 빠른 시간 내에 회신드릴게요! 감사합니다.
+최대한 빠른 시간 내에 회신드릴게요! 감사합니다.
