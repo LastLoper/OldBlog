@@ -9,12 +9,11 @@ author: WalterCho
 클래스의 멤버변수 즉, 프로퍼티(Property)등에 장착할 수 있는 willSet, didSet은 변수의 상태를 감지하고 응답합니다. 그리고 iOS앱에서 레이블 또는 테이블뷰 및 컬렉션뷰등 값의 변화에 따라 새로고침이 필요한 순간에 아주 유용하게 사용할 수 있지요. 어려운 단어지만 어렵지 않은, 개념과 사용법을 잘 익혀서 보다 짧고 보다 효율적인 앱을 완성해보세요!
 
 ## 프로퍼티 옵저버(Property Observer)
-애플은 willSet/didSet를 프로퍼티 옵저버라는 이름으로 부릅니다. 프로퍼티 옵저버(Property Observer)?
+애플은 willSet/didSet를 프로퍼티 옵저버라는 이름으로 부릅니다. 프로퍼티 옵저버(Property Observer)?<br>
+***말 그대로 클래스의 멤버변수의 변화를 관찰하는 것***입니다.
 
-결론부터 말하자면,<br>
-***옵저버(Observer), 말 그대로 클래스의 멤버변수의 변화를 관찰하는 것***입니다.
-
-willSet과 didSet은 getter/setter와 비슷한 느낌입니다.<br>
+willSet/didSet을 말하고요.<br>
+공부해보며 느낀점은 getter/setter와 같이 멤버변수의 값이 어떻게 변하는지 확인할 수 있다는 것이에요. <br>
 getter/setter는 개발자가 직접 값을 확인해서 저장할 것인지 말것인지를 결정할 수 있었다면, willSet/didSet은 그냥 저장하되 이제 바뀌는 값, 혹은 전에 저장됐던 값을 확인하고 그에 따라 나머지 작업을 어떻게 할 것인지 결정해라의 차이랄까요?
 
 ## 사용법
@@ -52,6 +51,7 @@ struct SongData {
 ### didSet
 역시 멤버변수에 값이 저장되기 전에 호출되지만 "현재 값 이전에 어떤 값이 저장되어 있었는지"를 알려줘요.
 ```swift
+//song.title = "Sweet Dreams"
 struct SongData {
     var title: String = "비어있음" {
         didSet {
@@ -59,12 +59,14 @@ struct SongData {
         }
     }
 }
+
+// 현재 : Sweet Dreams, 이전의 값 : 비어있음
 ```
 
 보통 저는 테이블뷰 또는 컬렉션뷰등을 새로고침할 때 주로 didSet을 쓰는데요,<br>
 역시 willSet과 비슷하게 특정 값에 따라 분기처리할 수 있을 것 같습니다.
 
-## iOS에서 쓰기
+## iOS에서 써보기
 <!-- 여기에 영상을 한번 넣어봐??? -->
 실제로 iOS앱을 만들면서 willSet과 didSet은 이렇게 사용할 수 있어요.<br>
 
@@ -89,6 +91,7 @@ class VC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var game: [GameData] = [] {
         didSet {
+            //didSet 프로퍼티 옵저버가 값이 바뀐 것을 감지하고 tableView.reload()를 수행합니다.
             tableView.reloadData()
         }
     }
@@ -103,16 +106,18 @@ class VC: UIViewController {
             GameData("젤다의 전설", "닌텐도")
         ]
 
-        //여기서 gameData 값을 바꾸고
+        //fetchData()에서 gameData 값을 바꾸고
         //tableView.reloadData()을 따로 명시 해줄 필요 없습니다.
-        //didSet 프로퍼티 옵저버가 값이 바뀐 것을 감지하고
-        //tableView.reload()를 수행합니다.
     }
 }
 ```
 
-개인적으로는 willSet/didSet을 쓰는 것과 getter/setter쓰는 것은 비슷한 것 같습니다. 
+개인적으로는 willSet/didSet을 쓰는 것과 getter/setter쓰는 것은 비슷한 것 같습니다. 다만 그 사용 용도가 조금 다른데요, ***getter/setter가 캡슐화 특성을 살리기 위해, 즉 데이터의 값을 함부로 바꿀 수 없도록*** 하는데 초점이 맞춰져 있는데 반해 ***willSet/didSet은 기존의 값과 비교 혹은 특정 값을 감지하고 뷰를 업데이***트 하는 데 있는 것 같습니다. 하지만 확실한건 iOS앱을 만들면서 willSet/didSet을 잘 사용하면 코드도 간결해고 효율적인 측면도 상승한다고 생각합니다.
 
 ## 그 외 알아두면 좋아요.
 1. 멤버변수에는 willSet, didSet뿐만 아니라 get, set을 연결할 수도 있지만 각각이 하나의 쌍이되요. 그래서 하나의 멤버변수에는 하나만 연결할 수 있어요.
 2. 저장 프로퍼티만 프로퍼티 옵저버를 연결할 수 있지만 예외적으로 연산 프로퍼티에도 연결할 수 있어요.
+
+## 메일보내기
+포스팅에 잘못된 부분이 있거나 궁금하신 점이 있다면, 왼쪽 사이드 하단 메뉴에서 로퍼즈팀으로 메일을 보내주세요!<br>
+최대한 빠른 시간 내에 회신드릴게요! 감사합니다.
