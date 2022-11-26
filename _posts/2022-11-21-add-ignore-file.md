@@ -25,6 +25,7 @@ author: WalterCho
 > vim ./.gitignore
 ```
 
+gitignore 파일은 숨김파일로 만들어져야 하니 앞에 꼭 점(.)을 붙이는 걸 기억해주세요.<br>
 이제 복사한 내용을 .gitignore파일에 붙여넣어 주세요.
 
 ## .gitignore파일 업로드
