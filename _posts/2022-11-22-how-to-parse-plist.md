@@ -48,7 +48,7 @@ Property List 에디터 화면에서 작성한 내용은 아래와 같이 작성
 먼저 코드 부터 보시죠.<br>
 그런데.. 딱히 부가적인 설명이 필요할 정도로 어려운 코드가 아니라서 주석을 참고해주시면 될 것 같습니다.
 ```swift
-struct Movies: Decod 프로토콜을 위임받는다.able {
+struct Movies: Decodable {
     //Data형을 Movies형으로 바꾸기 위해 Decodable 프로토콜을 위임받는다.
     //plist에서 만든 Key와 변수의 이름이 동일해야 한다.
     //다른 변수명을 쓰고 싶다면 CodingKeys객체를 이용할 수 있다.
