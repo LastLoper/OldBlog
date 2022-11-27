@@ -6,54 +6,56 @@ tags: [ios, guide]     # TAG names should always be lowercase
 author: WalterCho
 ---
 
-다량의 데이터를 직관적이고 간단하게 보여주는 방법이 바로 리스트다. iOS앱에서는 이 리스트를 테이블 뷰라는 이름으로 지원한다. 기본적으로 모든 리스트의 아이템인 셀(Cell)은 Xcode에서 4가지 타입을 기본으로 제공하며, 커스터마이징한 셀로도 만들 수 있다.
+모바일 앱에서 다량의 데이터를 직관적이고 간단하게 보여주는 대표적인 방법이 바로 리스트입니다. iOS앱에서는 이 리스트를 테이블 뷰 또는 컬렉션뷰라는 이름으로 제공하고 있는데요, 첫번째 테이블 뷰를 다뤄볼까 합니다. 테이블뷰는 기본적으로 셀(Cell) 타입 4종류를 지원하고, 커스터마이징한 셀로도 만들 수 있습니다.<br>
+각설하고 바로 만들어 볼까요?
 
 ## 스토리보드는 이렇게
 ### 테이블 뷰
-테이블 뷰를 구현하는 방식은 2가지가 있다.
+테이블 뷰를 구현하는 방식은 2가지가 있어요.
 - TableViewController를 스토리보드에 배치하는 것
 - ViewController안에 TableView를 배치하는 것
 
-**TableViewController를 스토리보드에 배치하고 UITableViewController를 상속받은 파일을 연결하면**, 구현에 필수적인 위임이나 메소드를 Xcode에서 만들어 준다. 그래서 구현이 한결 편하다, 하지만 테이블 뷰의 크기를 조절할 수 없다는 문제가 있어 다른 뷰를 배치할 수 없다.
+첫 번째 방법은 TableViewController를 스토리보드에 배치하고 UITableViewController를 상속받은 파일을 연결하면, 구현에 필요한 위임이나 메소드를 Xcode에서 자동으로 코드를 만들어줍니다. 그래서 구현이 한결 편하죠. 하지만 컨트롤러 전체가 테이블 뷰를 위해 만들어 져 있기 때문에 다른 UI를 배치할 수 없다는 단점이 있습니다.
 
-반면, **ViewController안에 TableView를 배치하면**, 모든 로직을 직접 구현해야 하는 번거로움이 있지만 다른 뷰를 같이 배치할 수 있어 레이아웃면에서 조금 더 유연하다.
+두 번째 방법은 ViewController안에 UITableView를 배치하는 것입니다. 모든 로직을 직접 구현해야 하는 번거로움이 있지만 다른 UIView들과 조금 더 유연하게 화면을 만들 수 있다는 장점이 있어서 개인적으로 선호하는 더 선호하는 편이에요.
 
-고로 난 아래와 같이 두 번째 방법으로 많이 만드는 편이다. 물론, 필요에 따라 선택하면 된다.<br>
+물론, 상황에 맞게 구현하면 좋겠죠?<br>
+아래와 같이 테이블 뷰를 스토리보드에 배치해주세요.
 ![ViewController안에 TableView를 배치한 이미지](/post_img/20220830/tableview_layout.png){: width="450" height="450" }
 _ViewController안에 TableView를 배치_
 
 ### 테이블 뷰의 셀
-- Xcode에서 제공하는 셀 타입 4가지
-Xcode에서는 테이블 뷰의 셀 타입 4가지를 제공한다.<br>(처음에 이 Accessory를 만들기 위해 이미지뷰를 직접 넣어서 만들고는 했다.)
-![Disclosure Indicator](/post_img/20220830/tableview_cell_types.png){: }
+- 기본 셀 타입 4종류
+기본적으로 Xcode에서 제공하는 셀 타입들 입니다. 아이폰의 기본 앱들에서 많이 보던 UI죠? 오른쪽 Attributes Inspector-Accessroy에서 지정할 수 있습니다. 하나씩 눌러보면 어떤 모습인지 스토리보드에서 바로 확인할 수 있으니 마음에 드는 걸 선택하시면 될 것 것네요.
+![Disclosure Indicator](/post_img/20220830/tableview_cell_types.png)
 _Xcode에서 기본으로 제공하는 Cell Type_
 
-오른쪽 Attributes Inspector-Accessroy에서 지정할 수 있다.<br>
 ![Setting The Type](/post_img/20220830/accessroy_types.png){: width="300px" height="300px" }
 _테이블뷰 셀의 Accessary 타입들_
 
 - 커스텀 셀
-Xcode에서 4가지 셀 디자인을 제공하긴 하지만, 그래도 나만의 셀을 만들고 싶을 때가 있다. 이때 XIB파일을 따로 만들어 셀을 커스터마이징할 수 있다.
+XIB파일을 따로 만들어 셀을 커스터마이징할 수 있습니다.
 
-먼저 **Also Create XIB file**을 체크해서 TableViewCell을 상속받는 클래스를 만든다. 그럼 아래와 같이 파일이 만들어지는데, 이 XIB에 보여주길 원하는 뷰를 배치하면 커스터마이징 셀이 된다.<br>
+먼저 파일을 만들 때 **Also Create XIB file**을 체크해주시고요, TableViewCell을 상속받는 클래스를 만들면 아래와 같이 파일이 만들어지는 것을 볼 수 있어요. 이 XIB에 UILabel, UIButton등의 뷰를 배치해보세요. 나만의 멋진 커스텀 테이블 뷰를 만들 수 있습니다.<br>
 ![Create Cell of Tableview](/post_img/20220830/create_cell_of_tableview.png){: width="500" height="500" }
 _커스터마이징 셀을 위한 XIB파일_
 
-그 전에, 이 XIB 파일에 클래스를 연결해줘야 한다. Inspector에서 같이 만든 클래스를 연결한다.<br>
+레이아웃을 정하고 서브뷰들을 배치했다면, XIB 파일에 클래스를 연결해줘야 합니다. Inspector에서 아래와 같이 클래스를 연결해주세요.<br>
 ![Connect class to the cell](/post_img/20220830/connect_cell_with_class.png){: }
 _XIB파일와 클래스파일 연결_
 
-하나 더, 이 XIB 파일을 뷰컨트롤러에서도 사용하기 위해서 XIB에 이름을 붙여줘야 한다. 역시 Inspector에서 Identifier를 작성해준다. 이 Identifier가 XIB의 이름이다.<br>이 이름은 아래 UITableViewDataSource { } 에서 사용될 것이다.<br>
+코드에서 이 XIB을 찾기 위해선 셀의 이름이 필요합니다. 역시 Inspector에서 설정할 수 있고요, Identifier를 작성해주세요. 이 Identifier가 XIB의 이름이 되는 것입니다.
 ![Set identifier of cell](/post_img/20220830/set_identifier_of_cell.png){: width="450" height="450" }
 _XIB파일에 아이디 만들어주기_
 
-## 데이터는?
-M(Model), V(View), C(Controller) 패턴으로 테이블뷰를 구성하면 아래와 같은 파일 구조를 가진다.
+## 데이터 만들기
+디자인 패턴중 MVC패턴을 이용해서 만들어볼 생각이에요.<br>
+각각 Model, View, Controller인데요, 프로젝트의 소스 코드 구조를 각각의 역할로 구분하고 그룹지어 유지보수나 가독성을 조금 더 향상할 수 있습니다.
 ![MVC Structure](/post_img/20220830/mvc_structure.png){: width="450" height="450"}
 _MVC패턴의 파일구조_
 
-- DataModel은 데이터가 저장되는 임의의 자료형이며,
-- DataManager는 DataModel과 ViewContorller사이에서 데이터를 가공하고 뿌려주는 역할을 한다.
+- DataModel은 데이터가 저장되는, 개발자가 만드는 임의의 자료형이며,
+- DataManager는 DataModel과 ViewContorller사이에서 다리역할을 하며 데이터를 가공하고 컨트롤러에 뿌려줍니다.
 
 ## 코딩
 ### DataModel과 DataManager
@@ -81,26 +83,17 @@ struct DataManager {
 ```
 
 ### 확장(Extension)
-테이블뷰는 Delegate와 DataSource 등 프로토콜을 모두 필수로 위임받아 구현해야 하는데, 구현하기에 앞서 확장(Extension)이라는 개념에 대해서 살짝 언급해볼까 한다.
+테이블뷰는 Delegate와 DataSource 등 프로토콜을 모두 필수로 위임받아 구현해야 합니다.<br>
+하지만 그 전에, 구현하기에 앞서 확장(Extension)이라는 개념에 대해서 살짝 언급해볼까 합니다.
 
+스위프트 공식 홈페이지에 설명된 글을 한번 볼까요?<br>
 ***Extensions add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don’t have access to the original source code (known as retroactive modeling). Extensions are similar to categories in Objective-C. (Unlike Objective-C categories, Swift extensions don’t have names.)***
 
 ***확장 기능은 기존 클래스, 구조, 열거형 또는 프로토콜 유형에 새 기능을 추가하는 것이다. 이 기능은 원본 소스 코드에 액세스할 수 없는 유형을 확장하는 기능이 포함된다. 확장자는 Objective-C의 범주와 비슷하다. (Object-C와는 달리 Swift 확장자는 이름이 없습니다.)***
 
-Swift 공식문서에서는 확장(Extension)기능을 위와 같이 정의하고 있는데,<br>간단히 이야기해서 이미 정의되어 있는 구조체 및 클래스등을 필요에 따라 확장해서 쓸 수 있다는 것이다.
+확장(Extension)을 위와 같이 정의하고 있는데, 간단히 이야기해서 이미 정의되어 있는 구조체 및 클래스등을 필요에 따라 확장해서 쓸 수 있다는 것입니다. 말만 봐서는 어떤 건지 와닿지 않으실 것 같은데요, 이미 만들어져 있는 함수를 개발자가 커스텀할 수 있음을 뜻한다고 생각하시면 편할 것 같아요.
 
-### DataManager객체 선언과 Delegate와 DataSource 연결
-보여줄 데이터를 가지고 있는 DataManager객체를 만든다.
-```swift
-class ViewController: UIViewContoller {
-    private let dm = DataManager()
-    .
-    .
-    .
-}
-```
-
-iOS의 테이블뷰, 컬렉션뷰와 같은 프로토콜을 ViewController 클래스로 아래와 같이 지정한다.<br>
+먼저 테이블 뷰의 delegate와 dataSource를 아래와 같이 self로 지정해주세요. 현재 컨트롤러에서 확장하겠다는 의미입니다.
 ```swift
 //MARK: - ViewDidLoad()
 class ViewController: UIViewContoller {
@@ -117,55 +110,79 @@ class ViewController: UIViewContoller {
 }
 ```
 
-그럼 아래와 같이 UITableViewDelegate구현에 필요한 함수들이 없다며 오류가 뜨는 것을 볼 수 있는데, 확장기능(Extension)을 사용해서 구현할 것이다.<br>
+아래와 같이 UITableViewDelegate구현에 필요한 함수들이 없다며 오류가 뜨는데요, 테이블 뷰를 확장(Extension)해서 구현해 줄게요.<br>
 ![Set Delegate Of TableView](/post_img/20220830/set_delegate_of_tableview.png){: width="450" height="450" }
 _프로토콜 위임시 내용을 구현안했을 때_
 
-각 델리게이트를 뷰컨트롤러에 연결했다면, 커스터마이징한 셀. 즉, XIB 파일을 테이블뷰에 등록해주는 작업이 필요하다.<br>
+그리고 확장하기 전에 하나만 더 해줄게요.<br>
+위에서 만들어준 XIB 파일을 테이블뷰에 등록해주는 작업이 필요합니다. 아직 테이블 뷰는 개발자가 커스텀해서 만든 셀의 존재를 모르고 있거든요.<br>
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     .
     .
     .
+    //nimName은 클래스명, forCellReuseIdentifier는 셀의 identifier를 넣어준다.
     tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
 }
 ```
 
-### 델리게이트(Delegate)
-아래와 같이 클래스 밑에 정의할 수 있다.
+### DataManager객체 선언과 Delegate와 DataSource 연결
+테이블 뷰에 데이터를 넣어 잘 나오는 지 확인해볼게요.<br>
+먼저 컨트롤러는 DataManager로부터 데이터를 가져오기 때문에 객체를 만들어 주세요. 이 객체를 통해 셀에 데이터를 넣어주고 테이블 뷰에 뿌려줄 것입니다.
 ```swift
-//MARK: - ViewController class
-class ViewController { ... }
-//MARK: - UITableViewDelegate
-//셀 터치 이벤트 등의 액션을 구현한다.
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        //터치한 cell을 확인할 수 있다.
-    }   
+class ViewController: UIViewContoller {
+    private let dm = DataManager()
+    .
+    .
+    .
 }
 ```
 
 ### 데이터 소스(DataSource)
-아래 코드는 반드시 구현해줘야 하는 함수들로써, 셀을 몇개나, 어떻게 보여줄지를 결정한다.<br>
+UITableViewDataSource를 확장하게 되면 화면에 테이블 뷰를 어떻게 나타낼지 정할 수 있습니다. 몇개의 셀을 보여줄 것인지, 어떻게 보여줄 것인지 등을 말이죠.
 ```swift
 //MARK: - UITableViewDataSource, 
-//셀을 얼마나, 어떻게 보여줘야 하는지 등을 구현한다.
+//셀을 얼마나, 어떻게 보여줘야 하는지를 구현한다.
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //나타낼 셀의 갯수
         return dm.datas.count
+
+    //  return dm.getDataCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? TableViewCell else { return TableViewCell() }
-        
-        let data = dm.datas[indexPath.row]
+        //커스텀한 셀을 Identifier로 찾아서 가져와 데이터를 넣어준다.
+        //만약 해당 Identifier로 셀을 찾지 못한다면 기본 타입인 TableViewCell()을 Return한다.
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? TableViewCell else { return TableViewCell() }        
+
+        let data = dm.datas[indexPath.item]
         cell.nameLabel.text = data.name
         cell.ageLabel.text = data.age.description + "살"
 
+    //  cell.setUpDataAtViews(data)
+
         return cell
     }
+}
+```
+
+### 델리게이트(Delegate)
+delegate는 터치 이벤트등의 사용자 액션에 대한 응답을 구현하는 일이에요. 여러 메서드를 제공하지만 대게 셀을 선택했을 때와 옆으로 밀어 삭제하는 메서드를 주로 구현합니다.
+```swift
+//MARK: - ViewController class
+class ViewController { 
+    ... 
+}
+
+//MARK: - UITableViewDelegate
+//셀을 터치하는 등의 이벤트 액션을 구현한다.
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        //TO DO
+    }   
 }
 ```
 
