@@ -15,7 +15,6 @@ author: WalterCho
 앱에서 PropertyList 파일을 만들어주세요.
 ![create property list file](/post_img/20221122/create_property_list.png)
 
-plist는 Key와 Value로 구성되는 문서입니다. 따라서 실제 앱에 뿌려질 데이터와 똑같은 Type, Key, Value를 넣어 작성해주세요.<br>
 Xcode는 데이터를 입력하는 방법으로 Property List와 Source Code라는 에디터 화면을 제공합니다.<br>
 왼쪽 프로젝트 리스트에서 어떤 에디터를 사용할지 선택할 수 있어요.
 ![opne as](/post_img/20221122/open_as.png)
@@ -23,20 +22,23 @@ Xcode는 데이터를 입력하는 방법으로 Property List와 Source Code라�
 ### Property List에서 데이터 추가
 Root아래로 Key/Type/Value를 작성하면 됩니다.<br>
 하지만!<br>
-우리는 목업 데이터의 용도로 plist를 만들 생각이기 때문에 약간의 수정이 필요합니다. 먼저 아래와 같이 Root아래에 array를 만들고 Root의 Type을 Array로, array의 Type을 Dictionary로 바꾸어 주세요.
+우리는 목업 데이터의 용도로 plist를 만들 생각이기 때문에 약간의 수정이 필요합니다.<br>
+먼저 아래와 같이 Root아래에 array를 만들고 Root의 Type을 Array로, array의 Type을 Dictionary로 바꾸어 주세요.
 ![create array field](/post_img/20221122/array_in_plist.png)
 
 이제 이 item에 실제 앱에 뿌려질 데이터와 같은 Key와 Type을 작성해주시면 됩니다.<br>
-![create items]()
+(value까지 미리 넣으면 이따가 수정하기 힘드니 Key와 Type만 작성해주세요.)
+![create items](/post_img/20221122/write_key_type.png)
 
 마지막으로 테스트할 갯수만큼 복사 & 붙여넣기 해주세요.<br>
-그리고 각각의 value를 입력해주면 됩니다.
+그리고 이제 각각의 value를 입력해주면 됩니다.
 
 ### Source Code에서 데이터 추가
 Source Code에서 입력하는 방법입니다.<br>
 `plist 우클릭`-`open as`-`Source Code`를 선택해서 에디터 화면을 바꿔주세요.
 
-Source Code화면은 XML형태로 제공되기에 각각 키워드를 태그로 써서 열고, 닫아주면 됩니다. Property List 에디터 화면에서 작성한 내용은 아래와 같이 작성할 수 있습니다.
+Source Code화면은 XML형태로 제공되기에 각각 키워드를 태그로 써서 열고, 닫아주면 됩니다.<br>
+Property List 에디터 화면에서 작성한 내용은 아래와 같이 작성할 수 있습니다.
 ![open plist as source code](/post_img/20221122/open_plist_as_source_code.png)
 
 이렇게 목업 데이터 용도로 plist를 만들어봤는데요, 어떠셨나요? 간단하죠?<br>
@@ -44,7 +46,7 @@ Source Code화면은 XML형태로 제공되기에 각각 키워드를 태그로 
 
 ## plist 데이터 가져오기
 먼저 코드 부터 보시죠.<br>
-딱히 부가적인 설명이 필요할 정도로 어려운 코드가 아니라서 주석을 참고해주세요!
+그런데.. 딱히 부가적인 설명이 필요할 정도로 어려운 코드가 아니라서 주석을 참고해주시면 될 것 같습니다.
 ```swift
 struct Movies: Decod 프로토콜을 위임받는다.able {
     //Data형을 Movies형으로 바꾸기 위해 Decodable 프로토콜을 위임받는다.
