@@ -6,9 +6,10 @@ tags: [ios, tip, git, gitignore, pods제외]
 author: WalterCho
 ---
 
-앱 개발등 프로젝트를 진행하다보면 git을 사용할 수 있는데요.
+앱 개발등 프로젝트를 진행하다보면 git을 사용할텐데요, 여러 컴퓨터 혹은 다른 팀원과 파일을 공유하다보면 몇몇 파일은 굳이 올리지 않아도 되지요. 그때 사용할 수 있는 방법이 바로 .gitignore파일의 존재입니다. 그런데 이 파일을 어떻게 작성해야 할까요? 아주 쉽게, 보다 효율적으로 만드는 방법을 소개할게요.
 
 ## 문서를 만들어주는 사이트
+방법은 아주 간단합니다.<br>
 아래 사이트를 참고하면 제외할 항목들을 한번에 정리해서 만들 수 있어요.<br>
 <https://www.toptal.com/developers/gitignore>
 ![gitignore site](/post_img/20221121/gitignore_site.png)
@@ -27,6 +28,8 @@ author: WalterCho
 
 gitignore 파일은 숨김파일로 만들어져야 하니 앞에 꼭 점(.)을 붙이는 걸 기억해주세요.<br>
 이제 복사한 내용을 .gitignore파일에 붙여넣어 주세요.
+
+참, 여기에 .DS_Store도 같이 작성해서 넣어주시면 팀원과 보다 원할하게 코드를 공유할 수 있습니다.
 
 ## .gitignore파일 업로드
 파일을 만들었다면 github로 올려줘야 겠죠?<br>
