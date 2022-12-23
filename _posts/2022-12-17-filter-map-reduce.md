@@ -11,7 +11,7 @@ author: WalterCho
 
 ## Filter
 
-***Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.***
+***Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.***<br>
 ***주어진 조건을 만족하는 값들을 새로운 컨테이너로 반환합니다.***
 
 애플 개발 문서에도 정의하고 있는데요, 말 그대로 많은 데이터 중에 조건 맞는 데이터를 골라내서 새로운 컨테이너로 Return하는 역할을 합니다.<br>
@@ -27,7 +27,7 @@ print(shortNames)
 
 ## Map
 
-***Returns an array containing the results of mapping the given closure over the sequence’s elements.***
+***Returns an array containing the results of mapping the given closure over the sequence’s elements.***<br>
 ***기존의 값들을 주어진 조건으로 할당(mapping)해서 새로운 결과 컨테이너틀 반환합니다.***
 
 이번엔 각 요소를 이용해서 기존의 값들을 변환, 새로운 형태의 컨테이너로 Return하는 클로저입니다.<br>
@@ -69,7 +69,7 @@ cast.forEach { str in
 
 ## Reduce
 
-***Returns the result of combining the elements of the sequence using the given closure.***
+***Returns the result of combining the elements of the sequence using the given closure.***<br>
 ***주어진 조건을 이용해서 기존의 값들을 결합한 새로운 컨테이너를 반환합니다.***
 
 마지막으로 배열의 모든 요소들을 더하기, 빼기, 곱하기, 나누기등 특별한 연산으로 결합해서 새로운 컨테이너를 Return하는 클로저입니다.
