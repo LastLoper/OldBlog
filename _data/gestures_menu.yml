@@ -1,0 +1,15 @@
+- label: Started
+  items:
+    - name: Gestures
+      link: /ios/gestures/gestures/
+    - name: UISwipeGesture
+      link: /ios/gestures/posts/swipe-gesture/
+    - name: UIPanGesture
+      link: /ios/gestures/posts/pan-gesture/    
+
+- label: Posts
+  items:
+    - name: Swift iOS 뷰 또는 이미지 뷰에 터치 이벤트 주기
+      link: /ios/gestures/posts/imageview-gesture/    
+    - name: Pan VS Swipe
+      link: /ios/gestures/posts/pan-vs-swipe/

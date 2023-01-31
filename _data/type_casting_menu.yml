@@ -1,0 +1,11 @@
+- label: Started
+  items:
+    - name: Type Casing
+      link: /swift/grammer/type-casting/type-casting/
+
+- label: Posts
+  items:
+    - name: iOS, Swift Down Casting 이해하기
+      link: /swift/grammer/type-casting/posts/class-down-casting/
+    - name: iOS앱에서 Swift is/as 타입캐스팅 이렇게 쓸 수 있다.
+      link: /swift/grammer/type-casting/posts/understanding-is-and-as/

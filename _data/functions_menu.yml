@@ -1,0 +1,27 @@
+- label: Started
+  items:
+    - name: Functions
+      link: /swift/grammer/functions/function/
+
+- label: 고차함수 (Higher-Order Function)
+  items:
+    - name: Filter
+      link: /swift/grammer/functions/high-order/filter/
+    - name: Map
+      link: /swift/grammer/functions/high-order/map/
+    - name: Reduce
+      link: /swift/grammer/functions/high-order/reduce/
+    - name: FlatMap
+      link: /swift/grammer/functions/high-order/flatmap/
+    - name: CompactMap
+      link: /swift/grammer/functions/high-order/compactmap/
+
+- label: 클로저 (Closure)
+  items:
+    - name: Closure
+      link: /swift/grammer/functions/closure/closure/
+    - name: Escaping Closure
+      link: /swift/grammer/functions/closure/escaping-closure/
+
+- label: Posts
+  items:      

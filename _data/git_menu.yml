@@ -1,0 +1,11 @@
+- label: Started
+  items:
+    - name: Git
+      link: /git/started/git/
+    - name: 자주쓰는 Git 명령어들
+      link: /git/started/git-commands/
+
+- label: Posts
+  items:
+    - name: 업로드 파일을 골라서 올리자, .gitignore
+      link: /git/posts/add-ignore-file/    

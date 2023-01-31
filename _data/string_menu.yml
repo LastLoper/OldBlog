@@ -1,0 +1,9 @@
+- label: Started
+  items:
+    - name: String
+      link: /swift/grammer/string/string/
+
+- label: Posts
+  items:
+    - name: 문자열 자르기
+      link: /swift/grammer/string/posts/extension-string/

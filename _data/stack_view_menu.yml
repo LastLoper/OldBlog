@@ -1,0 +1,9 @@
+- label: Started
+  items:
+    - name: StackView
+      link: /ios/storyboard/stack-view/stack-view/
+
+- label: Posts
+  items:
+    - name: StackView 안쪽으로 margin? padding? 여백 주는 방법
+      link: /ios/storyboard/stack-view/posts/stackview-margin/

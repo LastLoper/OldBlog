@@ -1,0 +1,9 @@
+- label: Started
+  items:
+    - name: MVC
+      link: /architecture/mvc/mvc/
+
+- label: Posts
+  items:
+    - name: MVC 예제
+      link: /architecture/mvc/posts/example_1/

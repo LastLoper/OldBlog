@@ -1,0 +1,18 @@
+- label: Stared
+  items:
+    - name: Computer Science
+      link: /cs/started/cs/
+
+- label: Architecture
+  items:
+    - name: Architecture
+      link: /cs/architecture/architecture/
+    - name: MVC
+      link: /cs/architecture/mvc/mvc/
+    - name: MVVM
+      link: /cs/architecture/mvvm/mvvm/
+
+- label: Posts
+  items:
+    - name: 프로그램이 사용하는 메모리 영역 Code, Data, Stack, Heap
+      link: /cs/posts/about-memory-area/

@@ -1,0 +1,12 @@
+- label: UIComponents
+  items:
+    - name: Label
+      link: /ios/ui-components/label/
+    - name: Button
+      link: /ios/ui-components/button/
+    - name: Table View
+      link: /ios/ui-components/table-view/table-view/
+    - name: Collection View
+      link: /ios/ui-components/collection-view/
+    - name: ScrollView
+      link: /ios/ui-components/scroll-view/

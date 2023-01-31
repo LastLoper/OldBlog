@@ -1,0 +1,29 @@
+- label: Started
+  items:
+    - name: Control Flow
+      link: /swift/grammer/control-flow-statement/control-flow-statement/
+
+- label: 조건문 (Conditinal)
+  items:
+    - name: If - else if - else
+      link: /swift/grammer/control-flow-statement/conditinal/if/
+    - name: Switch
+      link: /swift/grammer/control-flow-statement/conditinal/switch/
+    - name: Where
+      link: /swift/grammer/control-flow-statement/conditinal/where/
+
+- label: 반복문 (Loop)
+  items:
+    - name: For-in
+      link: /swift/grammer/control-flow-statement/loop/for-in/
+    - name: while
+      link: /swift/grammer/control-flow-statement/loop/while/
+    - name: repeat-while
+      link: /swift/grammer/control-flow-statement/loop/repeat-while/
+
+- label: 빠른 탈출 (Eary exit)
+  items:
+    - name: Guard let
+      link: /swift/grammer/control-flow-statement/eary-exit/guard-let/
+    - name: If let
+      link: /swift/grammer/control-flow-statement/eary-exit/if-let/
